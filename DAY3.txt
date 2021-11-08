@@ -38,6 +38,7 @@ public static String replace(String old) {
 			chng += c;
 		}
 	}
+}	
 	
 		
 
