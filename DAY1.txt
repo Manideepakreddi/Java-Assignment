@@ -1,0 +1,293 @@
+                #DAY1 ASSIGNMENT 
+
+Q1. #Printing the result
+public class Opeartions {
+
+	public static void main(String[] args) {
+		System.out.println(-5+8*6);
+		System.out.println((55+9)%9);
+        System.out.println(20+(-3*5)/8);
+		System.out.println(5+15/3*2-8%3);
+
+}
+
+}
+
+Q2.
+import java.util.Scanner;
+
+public class Basicopeations {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		   
+		  System.out.println("Input first number: ");
+		  int num1 = in.nextInt();
+		   
+		  System.out.println("Input second number: ");
+		  int num2 = in.nextInt();
+		  
+		  System.out.println(num1 + " + " + num2 + " = " + 
+				  (num1 + num2));
+		  System.out.println(num1 + " - " + num2 + " = " + 
+				  (num1 - num2));
+		  System.out.println(num1 + " * " + num2 + " = " + 
+				  (num1 * num2));
+		  System.out.println(num1 + " / " + num2 + " = " + 
+				  (num1 / num2));
+                  System.out.println(num1 + " % " + num2 + " = " + 
+				  (num1 % num2));
+		
+
+	}
+
+}
+
+		
+
+	
+Q3. 
+import java.util.Scanner;
+
+public class average {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+
+		System.out.print("Input first number: ");
+		int num1 = in.nextInt();
+
+		System.out.print("Input second number: ");
+		int num2 = in.nextInt();
+ 
+		System.out.print("Input third number: ");
+		int num3 = in.nextInt();
+
+	
+
+		System.out.println("Average" + "=" + (num1 + num2 + num3) / 3);
+
+	}
+
+}
+
+Q4.
+
+import java.util.Scanner;
+
+public class swap {
+
+	public static void main(String[] args) {
+		int a, b, temp;
+		Scanner s = new Scanner(System.in);
+
+		System.out.print("Enter the First Number: ");
+		a = s.nextInt();
+		System.out.print("Enter the Second Number: ");
+		b = s.nextInt();
+		
+		temp = a;
+		a= b;
+		b= temp;
+		
+		System.out.println(a);
+		System.out.println(b);
+
+ 
+		
+
+	}
+
+}
+
+Q5.
+
+import java.util.Scanner;
+
+public class primenumber {
+
+	public static void main(String[] args) {
+		int a;
+		Scanner s = new Scanner(System.in);
+
+		System.out.print("Enter the First Number: ");
+		a = s.nextInt();
+		if((a%1==0)&&(a%a==0)) {
+			System.out.println("primenumber");
+			
+		}else 
+			System.out.println("notprimenumber");
+
+			}
+
+}
+
+Q6.
+
+
+public class ascii {
+
+	public static void main(String[] args) {
+		char ch = 'A';
+		int ascii = ch;
+		
+		System.out.println("the ascii value of char"+"is:"+ ascii);
+		
+		
+ 
+	}
+
+}
+
+Q7.
+
+import java.util.Scanner;
+
+public class fizzbuzz {
+
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+
+		System.out.print("Enter theNumber: ");
+		int num = s.nextInt();
+		for (int i = 1; i <= num; i++) {
+			if (((i % 5) == 0) && ((i % 3) == 0))
+				System.out.println("fizzbuzz");
+			else if ((i % 3) == 0)
+				System.out.println("fizz");
+			else if ((i % 5) == 0)
+				System.out.println("buzz");
+			else
+				System.out.println(i);
+		}
+
+	}
+
+}
+
+
+Q8.
+
+MAIN CODE:
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		int n =s.nextInt();
+		int r = UserMainCode.checksum(n);
+		if(r==1) {
+			System.out.println("sum is odd");
+		}
+		else {
+			System.out.println("sum is even");
+
+		}
+		
+	}
+
+}
+class UserMainCode {
+
+	public static int checksum(int n) {
+		int n1;
+		int sum=0;
+		int r;
+		while(n!=0)
+		{
+			n1=n%10;
+			if((n1%2)!=0){
+			sum=sum+n1;
+			}
+			n=n/10;
+		}
+		if(sum%2==0) {
+			r=-1;
+		}else {
+			r=1;
+		}return r;
+ 
+	}
+
+}
+
+
+Q9.
+
+import java.util.Scanner;
+
+public class Main{
+
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		int n =s.nextInt();
+	    System.out.println(UserMainCode.SumOfSquaresOfEvenDigits(n));
+	    
+	}
+}
+
+class UserMainCode {
+
+	public static int SumOfSquaresOfEvenDigits(int n) {
+		
+		int rem=0, sum=0;
+		while(n>0){
+	
+		 rem = (n%10);
+		 if(rem%2==0)
+		 sum = sum + (rem * rem);
+		     n=n/10;
+		}
+		     return sum;
+		    
+			
+ 	}
+
+}
+
+Q10.
+
+import java.util.Scanner;
+import java.util.StringTokenizer;
+ 
+public class Main 
+{
+ 
+ public static void main(String[] args)
+ {
+	Scanner sc = new Scanner(System.in);
+	String s1= sc.nextLine();
+	System.out.println(UserMain.lengthiestString(s1));
+}
+}
+class UserMain
+{
+	public static String lengthiestString(String s1)
+ {
+	int max=0;
+	String s2=new String();
+	StringTokenizer t=new StringTokenizer(s1," ");
+	while(t.hasMoreTokens()){
+	String s3=t.nextToken();
+	int n=s3.length();
+	if(n>max){
+	max=n;
+	s2=s3;}
+}
+	return s2;
+}
+}
+ 
+
+
+
+ 
+
+
+
+
+
+
+

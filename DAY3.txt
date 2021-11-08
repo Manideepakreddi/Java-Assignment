@@ -1,0 +1,234 @@
+        DAY 3 ASSIGNMENT
+
+
+Q1.Write a Java program to convert all the characters in a string to lowercase.
+
+public static void main(String[] args) {
+	String st = "This Is tHe String I am PUTTIng for THIs TEST";
+	System.out.println(lowerCase(st));
+	}
+	private static String lowerCase(String st) {
+		String s = "";
+		char[] ch = st.toLowerCase().toCharArray();
+		for (Character c : ch) {
+		s += c;
+	}
+	return s;
+
+	}
+
+Q2.	Write a Java program to replace all the 'd' occurrence characters with ‘h’ characters in each string. */
+
+public class Day3 {
+
+	public static void main(String[] args) {
+
+System.out.println(replace("Dog, Dolphin, Dand, Dot, Dut, Di"));//Tester
+public static String replace(String old) {
+		String chng = "";
+		char[] ch = old.toLowerCase().toCharArray();
+		for (Character c : ch) {
+			if (c.equals('d')) {
+				c = 'h';
+			}
+			chng += c;
+		}
+		
+
+Q3.	write a Java program to sort an integer array of 10 elements in ascending. */
+
+public class Day3 {
+
+	public static void main(String[] args) {
+
+		Integer[] old = { 1, 4, 6, 9, 0, 6, 4, 3, 2, 5 };
+		System.out.println(Arrays.toString(old));
+		for (int i : sortAsc(old)) {
+			System.out.println(i);
+		}
+		public static Integer[] sortAsc(Integer[] old) {
+		Arrays.sort(old);
+		return old;
+	}
+
+Q4.	write a Java program to search for an element of an integer array of 10 elements. */
+
+public class Day3 {
+
+	public static void main(String[] args) {
+		Random rd = new Random();
+		int[] nums = new int[10];
+		for (int i = 0; i < 10; i++) {
+			int x = rd.nextInt(25);
+			nums[i] = x;
+			System.out.println(x);
+		}
+		System.out.println(5 + " is in the list: " + foundInt(5, nums));
+}
+		public static boolean foundInt(int searchD, int[] nums) {
+		for (int i : nums) {
+			if (i == searchD) {
+				return true;
+			}
+		}
+
+Q5.
+public class Day3 {
+
+	public static void main(String[] args) {
+		String test5 = "HelloWorld";
+		System.out.println(stringRange(1, 1, test5));
+}
+
+
+	private static String stringRange(int first, int last, String test5) {
+		String result = "";
+		char[] chr = test5.toCharArray();
+		if (first > last) {
+			int temp = first;
+			first = last;
+			last = temp;
+		} else if (first == last) {
+			last++;
+		}
+		if (last <= test5.length() - 1 || first > 0) {
+			for (int i = first; i < last; i++) {
+				result += chr[i];
+			}
+		} else {
+			return "Index(es) out of bounds for string!!!!";
+		}
+		return result;
+	}
+
+Q6.
+
+public class Day3 {
+
+	public static void main(String[] args) {
+	
+		String racecar = "racecar";
+		String helmet = "helmet";
+		System.out.println(palindrome("racecar"));
+
+		public static boolean palindrome(String check) {
+		char[] ch = check.toLowerCase().toCharArray();
+		String revCheck = "";
+		for (int i = check.length() - 1; i >= 0; i--) {
+			revCheck += ch[i];
+		}
+		if (revCheck.equals(check.toLowerCase())) {
+			return true;
+		}
+		return false;
+	}
+Q7.
+
+class GFG {
+
+	static int size = 26;
+
+	// Function to check if ch is a letter
+	static boolean isLetter(char ch)
+	{
+		if (!Character.isLetter(ch))
+			return false;
+
+		return true;
+	}
+
+	static boolean allLetter(String str,int len)
+	{
+	
+		str = str.toLowerCase();
+		boolean[] present = new boolean[size];
+		for (int i = 0; i < len; i++) {
+
+			if (isLetter(str.charAt(i))) {
+
+				int letter = str.charAt(i) - 'a';
+				present[letter] = true;
+			}
+		}
+
+		// Traverse for every letter
+		// from a to z
+		for (int i = 0; i < size; i++) {
+
+			 if (!present[i])
+				return false;
+		}
+		return true;
+	}
+
+	// Driver Code
+	public static void main(String args[])
+	{
+		String str = " the quick brown fox jumps over the lazy dog sp";
+		int len = str.length();
+		if (allLetter(str, len))
+			System.out.println("Yes the given string is Pangram");
+		else
+			System.out.println("the given string is not a pangram");
+	}
+}
+
+Q8.
+
+public class UserMainCode {
+
+	public static void main(String[] args) {
+		 
+		String kitchen = "kitchen";
+		System.out.println(getString(kitchen));
+	}
+
+	public static String getString(String old) {
+		char[] ch = old.toLowerCase().toCharArray();
+		String chngd = "";
+		for (int i = 0; i < ch.length; i++) {
+			if (i <= 1 && (ch[i] == 'h' || ch[i] == 'k')) {
+				chngd += ch[i];
+			} else if (i > 1) {
+				chngd += ch[i];
+			}
+
+		}
+		return chngd;
+	}
+}
+
+Q9.
+
+public class UserMainCode1 {
+	public static void main(String[] args) {
+		char a = '-';
+		String rabbit = "rabbit";
+		System.out.println(reverseAddChar(rabbit, a));
+	}
+
+	public static String reverseAddChar(String old, char sep) {
+		String result = "";
+		char[] chngd = old.toLowerCase().toCharArray();
+		for (int i = chngd.length - 1; i >= 0; i--) {
+			result += chngd[i];
+			if (i != 0) {
+				result += sep;
+			}
+		}
+		return result;
+	}
+}
+
+Q10.
+
+#Add method from another package	
+
+public class CalcPackageTest {
+
+	public static void main(String[] args) {
+		Calculator calc = new Calculator();
+		System.out.println(calc.add(2, 3));
+	}
+
+}
