@@ -1,0 +1,285 @@
+                        DAY 4 ASSIGNMENT
+
+Q1. #Shapes
+  
+abstract class Shape {
+  private String name;
+
+ 
+
+  public Shape(String name) {
+    this.name = name;
+  }
+
+  public String getName() {
+    return this.name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  // Abstract methods
+
+
+  public abstract double getArea();  
+  }
+
+// A Rectangle Class, Which Inherits from the Shape Class
+
+class Rectangle extends Shape {
+  private double width;
+  private double height;
+
+  public Rectangle(double width, double height) {
+    super("Rectangle");
+    this.width = width;
+    this.height = height;
+  }
+ 
+  public double getArea() {
+    return width * height;
+  }
+}
+
+// A Square Class, Which Inherits from the Shape Class
+class Square extends Shape {
+  private double side;
+ 
+  public Square(double side) {
+    // Set the shape name as "Sqaure"
+    super("Square");
+    this.side = side;
+
+  }
+
+  public double getArea() {
+    return side * side;
+  }
+
+}
+
+// A Circle Class, Which Inherits from Shape Class
+class Circle extends Shape {
+  private double radius;
+
+  public Circle(double radius) {
+    super("Circle");
+    this.radius = radius;
+  }
+
+  public double getArea() {
+    return Math.PI * radius * radius;
+  }
+
+}
+
+
+class ShapeUtil {
+   
+public static void printShapeDetails(Shape[] list) {
+    for (int i = 0; i < list.length; i++) {
+   
+      String name = list[i].getName(); // Late Binding
+      double area = list[i].getArea(); 
+     
+      System.out.println("Name: " + name);
+      System.out.println("Area: " + area);
+     
+
+      
+    }
+  }
+}
+
+public class Main {
+  public static void main(String[] args) {
+   
+    Shape[] shapeList = new Shape[3];
+    shapeList[0] = new Rectangle(2.0, 4.0); // Upcasting
+    shapeList[1] = new Circle(5.0); // Upcasting
+    shapeList[2] = new Square(5.0); // Upcasting
+
+     
+    ShapeUtil.printShapeDetails(shapeList);
+  }
+}
+
+
+Q2. #Class Method for MyCalculator using Interface
+
+class MyCalculator implements AdvancedArithmetic {
+    public int divisor_sum(int n) {
+        int sum=0;
+        for(int i=1;i<=n;i++) {
+            if(n%i==0)
+                sum+=i;
+        }
+        return sum;
+    }
+}
+
+Q3.
+
+import java.util.Scanner;
+
+abstract class Card {
+	String holderName;
+	String cardNumber;
+	String expiryDate;
+
+	public Card() {
+
+	}
+
+	public Card(String holderName, String cardNumber, String expiryDate) {
+		this.holderName = holderName;
+		this.cardNumber = cardNumber;
+	}
+
+	public String getHolderName() {
+		return holderName;
+	}
+
+	public void setHolderName(String holderName) {
+		this.holderName = holderName;
+	}
+
+	public String getCardNumber() {
+		return cardNumber;
+	}
+
+	public void setCardNumber(String cardNumber) {
+		this.cardNumber = cardNumber;
+	}
+
+	public String getExpiryDate() {
+		return expiryDate;
+	}
+
+	public void setExpiryDate(String expiryDate) {
+		this.expiryDate = expiryDate;
+	}
+
+}
+
+class MembershipCard extends Card {
+	private int rating;
+
+	public MembershipCard(String holderName, String cardNumber, String expiryDate, int rating) {
+		super(holderName, cardNumber, expiryDate);
+		this.setRating(rating);
+	}
+
+	public int getRating() {
+		return rating;
+	}
+
+	public void setRating(int rating) {
+		this.rating = rating;
+	}
+}
+
+class PaybackCard extends Card {
+	private int pointsEarned;
+	private double totalAmount;
+
+	public PaybackCard(String holderName, String cardNumber, String expiryDate, int pointsEarned, double totalAmount) {
+		super(holderName, cardNumber, expiryDate);
+		this.setPointsEarned(pointsEarned);
+		this.setTotalAmount(totalAmount);
+	}
+
+	public int getPointsEarned() {
+		return pointsEarned;
+	}
+
+	public void setPointsEarned(int pointsEarned) {
+		this.pointsEarned = pointsEarned;
+	}
+
+	public double getTotalAmount() {
+		return totalAmount;
+	}
+
+	public void setTotalAmount(double totalAmount) {
+		this.totalAmount = totalAmount;
+	}
+}
+
+public class MainCard {
+	static Card payback;
+	static Card member;
+
+	public static void main(String[] args) {
+//		String holderName, cardNumber, expiryDate;
+		int rating = 0;
+		int points = 0;
+		double total = 0;
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Select the Card\nPayback press 1\nMembership press 2");
+		int check = sc.nextInt();
+
+		switch (check) {
+		case 1:
+			System.out.println("Enter the Card Details:");
+			String[] temp = sc.next().split("|");
+			System.out.println("Enter points in card:");
+			points = sc.nextInt();
+			System.out.println("Enter Amount");
+			total = sc.nextDouble();
+			payback = new PaybackCard(temp[0], temp[1], temp[2], points, total);
+		case 2:
+			System.out.println("Enter the Card Details:");
+			String[] temp2 = sc.next().split("|");
+			System.out.println("Enter the Rating:");
+			rating = sc.nextInt();
+			member = new MembershipCard(temp2[0], temp2[1], temp2[2], rating);
+		}
+		if (check == 1) {
+			System.out.println(payback.getHolderName() + "Payback Card Details");
+			System.out.println("Card Number " + payback.getCardNumber());
+			System.out.println("Points Earned " + points);
+		}
+
+	}
+
+}
+
+Q4. #ERRORS
+
+OOPExercises.java:9: error: a has private access in A
+        System.out.println("objA.a = "+objA.a); 
+                                           ^
+OOPExercises.java:11: error: a has private access in A
+        objA.a = 222; 
+            ^
+2 errors
+
+Q5.#OUTPUT
+
+in the constructor of class FirstClass: 
+a = 100
+a = 333
+
+-----in the constructor of class B: 
+b = 123.45
+b = 3.14159
+
+in main(): 
+objA.a = 333
+objB.b = 3.14159
+objA.a = 222
+objB.b = 333.33
+
+Q6. #OUTPUT
+
+a in A = 100
+a in B = 123
+a in B = 123
+a in C = 543
+a in C = 543
+a in C = 543
+
+
