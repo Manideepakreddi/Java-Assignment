@@ -3,6 +3,8 @@
 
 Q1.Write a Java program to convert all the characters in a string to lowercase.
 
+Public class Day3{
+
 public static void main(String[] args) {
 	String st = "This Is tHe String I am PUTTIng for THIs TEST";
 	System.out.println(lowerCase(st));
@@ -16,6 +18,7 @@ public static void main(String[] args) {
 	return s;
 
 	}
+}	
 
 Q2.	Write a Java program to replace all the 'd' occurrence characters with ‘h’ characters in each string. */
 
@@ -24,6 +27,7 @@ public class Day3 {
 	public static void main(String[] args) {
 
 System.out.println(replace("Dog, Dolphin, Dand, Dot, Dut, Di"));//Tester
+}
 public static String replace(String old) {
 		String chng = "";
 		char[] ch = old.toLowerCase().toCharArray();
@@ -33,6 +37,8 @@ public static String replace(String old) {
 			}
 			chng += c;
 		}
+	}
+	
 		
 
 Q3.	write a Java program to sort an integer array of 10 elements in ascending. */
@@ -50,6 +56,7 @@ public class Day3 {
 		Arrays.sort(old);
 		return old;
 	}
+}	
 
 Q4.	write a Java program to search for an element of an integer array of 10 elements. */
 
@@ -71,6 +78,8 @@ public class Day3 {
 				return true;
 			}
 		}
+	}
+}	
 
 Q5.
 public class Day3 {
@@ -100,6 +109,7 @@ public class Day3 {
 		}
 		return result;
 	}
+}	
 
 Q6.
 
@@ -110,6 +120,7 @@ public class Day3 {
 		String racecar = "racecar";
 		String helmet = "helmet";
 		System.out.println(palindrome("racecar"));
+		}
 
 		public static boolean palindrome(String check) {
 		char[] ch = check.toLowerCase().toCharArray();
@@ -122,6 +133,7 @@ public class Day3 {
 		}
 		return false;
 	}
+}	
 Q7.
 
 class GFG {
